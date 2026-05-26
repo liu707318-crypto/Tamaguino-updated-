@@ -1,0 +1,19 @@
+const int buttonPin = 7; // test 8,9 respectively
+
+void setup() {
+pinMode(LED_BUILTIN, OUTPUT);
+
+// internal pullup resistor
+pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+int buttonState = digitalRead(buttonPin);
+
+// pressed = LOW because of INPUT_PULLUP
+if (buttonState == LOW) {
+digitalWrite(LED_BUILTIN, HIGH);
+} else {
+digitalWrite(LED_BUILTIN, LOW);
+}
+}
